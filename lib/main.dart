@@ -4,6 +4,7 @@ import 'package:food/pages/home.dart';
 import 'package:food/pages/loading.dart';
 import 'package:food/pages/login.dart';
 import 'package:food/pages/onboarding.dart';
+import 'package:food/pages/sign_up.dart';
 import 'package:food/pages/verify_password.dart';
 
 void main() {
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Color(0xffFF7622)),
         fontFamily: "Sen",
         useMaterial3: true,
+
       ),
       routes: {
         "/": (context)=> LoadingScreen(),
@@ -29,7 +31,8 @@ class MyApp extends StatelessWidget {
         "/home" : (context) => HomeScreen(),
         "/login" : (context)=> LoginScreen(),
         "/forgot-password" : (context)=> ForgotPassword(),
-        "/verify-password" : (context) => VerifyPassword()
+        "/verify-password" : (context) => VerifyPassword(),
+        "/sign-up" : (context)=> SignUp()
       },
     );
   }

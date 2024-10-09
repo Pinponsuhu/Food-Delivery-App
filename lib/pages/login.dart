@@ -103,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                          "Email",
+                          "EMAIL",
                         style: form_label,
                       ),
                       SizedBox(
@@ -121,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       form_vertical_space,
                       Text(
-                          "Password",
+                          "PASSWORD",
                         style: form_label,
                       ),
                       SizedBox(
@@ -164,7 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 46,
                       ),
                       TextButton(
-                          onPressed: null,
+                          onPressed: ()=> Navigator.pushNamed(context, "/home"),
                           style: TextButton.styleFrom(
                             backgroundColor: primaryColor,
                             minimumSize: Size(double.infinity, 56),
@@ -195,6 +195,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           SizedBox(width: 12,),
                           GestureDetector(
+                            onTap: ()=> Navigator.pushNamed(context,"/sign-up"),
                             child: Text(
                               "SIGN UP",
                               style: TextStyle(

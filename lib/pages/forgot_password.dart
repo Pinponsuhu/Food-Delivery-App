@@ -18,7 +18,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             child: Column(
               children: [
                 Container(
-                  height: 250,
+                  height: 220,
                   width: double.infinity,
                   child: Stack(
                     children: [
@@ -70,8 +70,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 Flexible(
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(16)),
                       color: Colors.white,
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(16), topRight: Radius.circular(16)),
                     ),
                     padding: EdgeInsets.all(16),
                     child: Form(

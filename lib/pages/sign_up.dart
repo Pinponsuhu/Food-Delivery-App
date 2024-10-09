@@ -13,7 +13,7 @@ class _SignUpState extends State<SignUp> {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       backgroundColor: Color(0XFF1E1E2E),
-      body: SingleChildScrollView(
+      body: Container(
         child: Column(
           children: [
             Container(
@@ -33,7 +33,7 @@ class _SignUpState extends State<SignUp> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text(
-                          "Log In",
+                          "Sign Up",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -44,7 +44,7 @@ class _SignUpState extends State<SignUp> {
                           height: 4,
                         ),
                         Text(
-                          "Please sign in to your existing account",
+                          "Please sign up to get started",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w400,
@@ -66,134 +66,122 @@ class _SignUpState extends State<SignUp> {
                 ],
               ),
             ),
-            Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                color: Colors.white,
-              ),
-              padding: EdgeInsets.all(16),
-              child: Form(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Email",
-                        style: form_label,
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      TextFormField(
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(vertical: 16,horizontal: 4),
-                          fillColor: Color(0XFFF0F5FA),
-                          filled: true,
-                          focusedBorder: InputBorder.none,
-                          enabledBorder: InputBorder.none,
+            Flexible(
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(topRight: Radius.circular(16), topLeft: Radius.circular(16)),
+                  color: Colors.white,
+                ),
+                padding: EdgeInsets.all(16),
+                child: Form(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "NAME",
+                          style: form_label,
                         ),
-                      ),
-                      form_vertical_space,
-                      Text(
-                        "Password",
-                        style: form_label,
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      TextFormField(
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(vertical: 16,horizontal: 4),
-                          fillColor: Color(0XFFF0F5FA),
-                          filled: true,
-                          focusedBorder: InputBorder.none,
-                          enabledBorder: InputBorder.none,
+                        SizedBox(
+                          height: 8,
                         ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Checkbox(
-                                value: false, onChanged: null,
-
-                              ),
-                              Text("Remember me")
-                            ],
+                        TextFormField(
+                          keyboardType: TextInputType.name,
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.symmetric(vertical: 16,horizontal: 4),
+                            fillColor: Color(0XFFF0F5FA),
+                            filled: true,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
                           ),
-                          GestureDetector(
-                            onTap: ()=> Navigator.pushNamed(context,"/forgot-password"),
-                            child: Text(
-                              "Forgot Password?",
-                              style: TextStyle(
-                                  color: primaryColor
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 46,
-                      ),
-                      TextButton(
-                          onPressed: null,
-                          style: TextButton.styleFrom(
-                              backgroundColor: primaryColor,
-                              minimumSize: Size(double.infinity, 56),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8)
-                              )
+                        ),
+                        form_vertical_space,
+                        Text(
+                          "EMAIL",
+                          style: form_label,
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        TextFormField(
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.symmetric(vertical: 16,horizontal: 4),
+                            fillColor: Color(0XFFF0F5FA),
+                            filled: true,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
                           ),
-                          child:
-                          Text(
-                            "LOG IN",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700
-                            ),
-                          )),
-                      SizedBox(
-                        height: 46,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Don't have an account?",
-                            style: TextStyle(
-                                color: Colors.grey[700]
-                            ),
+                        ),
+                        form_vertical_space,
+                        Text(
+                          "PASSWORD",
+                          style: form_label,
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        TextFormField(
+                          keyboardType: TextInputType.text,
+                          
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.symmetric(vertical: 16,horizontal: 4),
+                            fillColor: Color(0XFFF0F5FA),
+                            filled: true,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            suffixIcon: IconButton(onPressed: null, icon: Icon(Icons.remove_red_eye_outlined, size: 22, ))
                           ),
-                          SizedBox(width: 12,),
-                          GestureDetector(
-                            child: Text(
+                        ),
+                        form_vertical_space,
+                        Text(
+                          "RE-TYPE PASSWORD",
+                          style: form_label.copyWith(
+              
+                          ),
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        TextFormField(
+                          keyboardType: TextInputType.text,
+              
+                          decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(vertical: 16,horizontal: 4),
+                              fillColor: Color(0XFFF0F5FA),
+                              filled: true,
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              suffixIcon: IconButton(onPressed: null, icon: Icon(Icons.remove_red_eye_outlined, size: 22, ))
+                          ),
+                        ),
+                        SizedBox(
+                          height: 46,
+                        ),
+                        TextButton(
+                            onPressed: null,
+                            style: TextButton.styleFrom(
+                                backgroundColor: primaryColor,
+                                minimumSize: Size(double.infinity, 60),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8)
+                                )
+                            ),
+                            child:
+                            Text(
                               "SIGN UP",
                               style: TextStyle(
-                                  color: primaryColor,
-                                  fontWeight: FontWeight.w500
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w700
                               ),
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 46,
-                      ),
-                      Center(
-                        child: Text(
-                          "Or",
-                          textAlign: TextAlign.center,
+                            )),
+                        SizedBox(
+                          height: 46,
                         ),
-                      ),
-                      SizedBox(
-                        height: 46,
-                      ),
-                    ],
-                  )
+                      ],
+                    )
+                ),
               ),
             )
           ],
