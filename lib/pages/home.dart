@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 38),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 38),
         child: Column(
           children: [
             MenuArea(),
@@ -319,27 +319,98 @@ class _HomeScreenState extends State<HomeScreen> {
     context: context,
     builder: (BuildContext context){
           return Dialog(
-            child: Container(
-              padding: EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage("assets/popupBg.png")),
-                  gradient: LinearGradient(
-                      end: Alignment.topLeft,
-                      begin: Alignment.bottomRight,
-                      colors: [
-                        Color(0XFFE76F00),
-                        Color(0XFFFFEB34)
-                      ])
-              ),
-              child: Column(
-                children: [
-                  Text("Hurry Offers!"),
-                  Text("#1243CD2"), 
-                  Text("Use the cupon get 25% discount"), 
-                  TextButton(onPressed: null, child: Text("GOT IT"))
-                ],
-              ),
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 36),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      image: DecorationImage(image: AssetImage("assets/popupBg.png")),
+                      gradient: LinearGradient(
+                          end: Alignment.topLeft,
+                          begin: Alignment.bottomRight,
+                          colors: [
+                            Color(0XFFE76F00),
+                            Color(0XFFFFEB34)
+                          ])
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        "Hurry Offers!",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900,
+                            fontSize: 34
+                        ),
+                      ),
+                      SizedBox(
+                        height: 48,
+                      ),
+                      Text(
+                        "#1243CD2",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 28
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        "Use the coupon get 25% discount",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      TextButton(
+                          style: TextButton.styleFrom(
+                              minimumSize: Size(double.infinity, 58),
+                              foregroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                  side: BorderSide(
+                                    color: Colors.white,
+                                    width: 2.2,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8)
+                              )
+                          ),
+                          onPressed: null,
+                          child: Text(
+                            "GOT IT",
+                            style: TextStyle(
+                                color: Colors.white
+                            ),
+                          )
+                      )
+                    ],
+                  ),
 
+                ),
+                Positioned(
+                  top: -20,
+                    right: -10,
+                    child: GestureDetector(
+                      onTap: ()=> Navigator.pop(context),
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Color(0XFFFFE194),
+                          shape: BoxShape.circle
+                        ),
+                        child: FaIcon(FontAwesomeIcons.xmark, color: primaryColor,size: 16,),
+                      ),
+                    )
+                )
+              ],
             ),
           );
     }
