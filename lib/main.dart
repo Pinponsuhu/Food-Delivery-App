@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
 
       ),
       routes: {
-        "/": (context)=> HomeScreen(),
+        "/": (context)=> LoadingScreen(),
         "/onboarding": (context)=> Onboarding(),
-        // "/home" : (context) => HomeScreen(),
+        "/home" : (context) => HomeScreen(),
         "/login" : (context)=> LoginScreen(),
         "/forgot-password" : (context)=> ForgotPassword(),
         "/verify-password" : (context) => VerifyPassword(),
