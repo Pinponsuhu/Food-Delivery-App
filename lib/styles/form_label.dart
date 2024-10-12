@@ -6,7 +6,7 @@ const TextStyle form_label = TextStyle(
 );
 
 const SizedBox form_vertical_space = SizedBox(
-  height: 24,
+  height: 28,
 );
 
 const primaryColor = Color(0xffFF7622);

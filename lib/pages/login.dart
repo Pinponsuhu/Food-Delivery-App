@@ -112,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(vertical: 16,horizontal: 4),
+                          contentPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 4),
                           fillColor: Color(0XFFF0F5FA),
                           filled: true,
                           focusedBorder: InputBorder.none,
@@ -130,7 +130,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(vertical: 16,horizontal: 4),
+                          contentPadding: EdgeInsets.symmetric(vertical: 20,horizontal: 4),
                           fillColor: Color(0XFFF0F5FA),
                           filled: true,
                           focusedBorder: InputBorder.none,
