@@ -4,6 +4,7 @@ import 'package:food/pages/home.dart';
 import 'package:food/pages/loading.dart';
 import 'package:food/pages/login.dart';
 import 'package:food/pages/onboarding.dart';
+import 'package:food/pages/search.dart';
 import 'package:food/pages/sign_up.dart';
 import 'package:food/pages/verify_password.dart';
 
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
         "/login" : (context)=> LoginScreen(),
         "/forgot-password" : (context)=> ForgotPassword(),
         "/verify-password" : (context) => VerifyPassword(),
-        "/sign-up" : (context)=> SignUp()
+        "/sign-up" : (context)=> SignUp(),
+        "/search" : (context)=> SearchScreen()
       },
     );
   }

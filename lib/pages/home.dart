@@ -97,21 +97,37 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Color(0XFFF0F5FA),
                 borderRadius: BorderRadius.circular(8)
               ),
-              child: TextField(
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                    icon: FaIcon(
-                      FontAwesomeIcons.magnifyingGlass,
-                      color: Colors.grey[600],
+              child: Row(
+                children: [
+                  TextField(
+                    textInputAction: TextInputAction.search,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                        icon: FaIcon(
+                          FontAwesomeIcons.magnifyingGlass,
+                          color: Colors.grey[600],
+                        ),
+                        iconColor: Color(0XFFF0F5FA),
+                        hintText: "Search by dishes or restaurants",
+                        enabledBorder: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        filled: true,
+                        fillColor: Color(0XFFF0F5FA),
+                        contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 8)
                     ),
-                    iconColor: Color(0XFFF0F5FA),
-                    hintText: "Search by dishes or restaurants",
-                    enabledBorder: InputBorder.none,
-                    focusedBorder: InputBorder.none,
-                    filled: true,
-                    fillColor: Color(0XFFF0F5FA),
-                    contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 8)
-                ),
+                    onSubmitted: (value){
+                      Navigator.pushNamed(context, "/search", arguments: {
+                        "search" : value
+                      });
+                    },
+                  ),
+                  IconButton(
+                    onPressed: (){
+                      print("object");
+                    },
+                    icon: Icon(Icons.close),
+                  )
+                ],
               ),
             ),
             Row(
@@ -247,9 +263,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ))
               ],
-            ),
-            SizedBox(
-              height: 20,
             ),
             ListView.builder(
               shrinkWrap: true,
